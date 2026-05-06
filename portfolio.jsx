@@ -41,10 +41,12 @@ const DATA = {
     { icon: "sql", title: "Database Design & SQL", desc: "Expert in architecting scalable database schemas and writing optimized SQL queries. I design for performance using PostgreSQL and MySQL, implementing proper indexing, complex joins, and query optimization for large-scale data processing.", tags: ["PostgreSQL", "MySQL", "SQL", "Database Design", "Query Optimization"] },
   ],
   skills: [
-    { category: "AI & LLMs", items: ["OpenAI API", "LangChain", "LangGraph", "Multi-Agent Systems", "Prompt Engineering", "Vector Databases"] },
-    { category: "Backend Development", items: ["Python", "FastAPI", "Django"] },
+    { category: "AI & LLMs", items: ["OpenAI API", "LangChain", "LangGraph", "Multi-Agent Systems", "Prompt Engineering", "Vector Databases", "RAG (Retrieval-Augmented Generation)", "Embeddings", "AI Workflow Automation"] },
+    { category: "Backend Development", items: ["Python", "FastAPI", "Django", "Node.js", "OpenAPI"] },
     { category: "Frontend Development", items: ["Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
-    { category: "Databases", items: ["PostgreSQL", "MySQL", "SQLite"] },
+    { category: "Databases", items: ["PostgreSQL", "MySQL", "SQLite", "Prisma", "DB Indexing", "Query Optimization"] },
+    { category: "Auth & Security", items: ["JWT", "OAuth", "Auth0"] },
+    { category: "DevOps & Deployment", items: ["Vercel", "GitHub Actions"] },
     { category: "API Integrations", items: ["Slack API", "Freshworks CRM API", "Google Sheets API"] },
   ],
   experience: [
@@ -53,12 +55,15 @@ const DATA = {
     { period: "Mar 2024 – Sep 2024", role: "Full Stack Python Developer – Intern", company: "Skill Capital", current: false, points: ["Developed backend modules and REST APIs using Django for real-world applications", "Wrote efficient SQL queries and handled database operations (MySQL/SQLite) for CRUD and data management", "Built responsive frontend interfaces using HTML, CSS, and JavaScript for client-facing applications", "Technologies: Python, Django, MySQL, SQLite, JavaScript, HTML5, CSS3"] },
   ],
   projects: [
-    { type: "AI & Agentic Full Stack", category: "agentic", name: "Smart Car Agentic Dashboard", desc: "A Django-powered agentic dashboard where the backend monitors vehicle data and surfaces decisions without the user having to ask. REST APIs feed a live JavaScript frontend in real time.", tags: ["Python", "Django", "REST APIs", "SQLite", "JavaScript", "AI Agents"], image: "/smart-car-dashboard.png", github: null, live: null },
-    { type: "Agentic Web Application", category: "agentic", name: "Django Agentic Web Application", desc: "A full stack Python/Django app built from the ground up to support AI agent integration. The backend is structured so agents can plug in, trigger workflows, and operate without manual intervention.", tags: ["Python", "Django", "SQLite", "Agentic Design", "Automation"], image: "/django-agentic-app.png", github: null, live: null },
-    { type: "Enterprise CRM", category: "enterprise", name: "CRM System — Nagarjuna Steels", desc: "Built the complete CRM for Nagarjuna Steels — customer records, lead tracking, business workflows. Django backend, MySQL, REST APIs, and an admin panel the team could actually use.", tags: ["Python", "Django", "REST APIs", "MySQL", "JavaScript"], image: "/crm-nagarjuna.png", github: null, live: null },
+    { type: "Full Stack Dashboard", category: "fullstack", name: "Smart Car Dashboard", desc: "A Django-powered real-time car dashboard that displays live vehicle data through a clean JavaScript frontend. REST APIs serve metrics from the backend to the UI, replicating the experience of a real-life car instrument cluster.", tags: ["Python", "Django", "REST APIs", "SQLite", "JavaScript"], image: "/smart-car-dashboard.png", github: null, live: null },
+{ type: "Enterprise CRM", category: "enterprise", name: "CRM System — Nagarjuna Steels", desc: "Built the complete CRM for Nagarjuna Steels — customer records, lead tracking, business workflows. Django backend, MySQL, REST APIs, and an admin panel the team could actually use.", tags: ["Python", "Django", "REST APIs", "MySQL", "JavaScript"], image: "/crm-nagarjuna.png", github: null, live: null },
+    { type: "Enterprise HRMS", category: "enterprise", name: "HIRAVA — HRMS Platform", desc: "Full-stack HRMS covering the complete employee lifecycle — onboarding, attendance tracking, leave management, payroll, and offboarding. Built with Next.js API routes, PostgreSQL, Redux state management, Razorpay for payroll, and Nodemailer for automated HR workflow notifications. Delivered production-ready to real enterprise clients.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Razorpay", "Nodemailer"], image: "/hrms-hirava.png", github: null, live: null },
+    { type: "Intelligent Automation Agent", category: "agentic", name: "Slack Hourly Report Bot", desc: "Autonomous Slack bot that sends hourly team check-ins, captures responses via Slack event handling, and persists structured data to individual Google Sheets tabs per team member. Event-driven architecture with intelligent non-response detection, automated follow-up triggers, and CSV-based team hot-reload — no code changes needed to onboard new users. Replaced manual daily standups entirely, ensuring 100% data capture with zero manual intervention.", tags: ["Python", "FastAPI", "Slack API", "Google Sheets API", "Automation"], image: "/slack_bot.webp", github: null, live: null },
+    { type: "Multi-Agent AI Pipeline", category: "agentic", name: "Freshworks CRM Automation & AI Audit System", desc: "Autonomous multi-agent AI pipeline that monitors daily CRM lead activity, detects mutations in ratings and notes using a custom diff engine, and auto-generates AI-powered manager insights — delivered directly into formatted Google Sheets reports. LangChain agents orchestrate Freshworks API ingestion → LLM analysis → structured reporting. Eliminated 100% of manual CRM audit work for the entire sales team, running 24/7 with zero human intervention.", tags: ["Python", "OpenAI API", "LangChain", "LangGraph", "Freshworks CRM API", "Google Sheets API", "Vector Databases"], image: "/freshworks_api.webp", github: null, live: null },
+    { type: "Enterprise LMS", category: "enterprise", name: "Digital Lync — Learning Management System", desc: "Full-stack LMS built for both admins and learners. Auth0 handles learner authentication — securing access to course videos, profile management, and a certificate request workflow. Admins get a dedicated panel with full visibility into learner activity, course progress, and certificate approvals. Built to serve real users across live classes, documents, and video content.", tags: ["Node.js", "Auth0", "JavaScript", "HTML/CSS", "REST APIs"], image: "/LMS.png", github: null, live: null },
   ],
   social: [
-    { label: "GitHub", href: "https://github.com/anirudh07-ux", icon: "github" },
+    { label: "GitHub", href: "https://github.com/anirudh-agentic", icon: "github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/anirudh-v-84711b315/", icon: "linkedin" },
   ],
   email: "vellankianirudh2001@gmail.com",
@@ -153,6 +158,69 @@ function useReveal(threshold = 0.1) {
   return [ref, vis];
 }
 
+// ─── CURSOR ───────────────────────────────────────────────────────────────────
+function Cursor() {
+  const dotRef  = useRef(null);
+  const ringRef = useRef(null);
+  const pos     = useRef({ x: 0, y: 0 });
+  const ring    = useRef({ x: 0, y: 0 });
+  const raf     = useRef(null);
+  const hovered = useRef(false);
+
+  useEffect(() => {
+    const onMove = (e) => {
+      pos.current = { x: e.clientX, y: e.clientY };
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+      }
+    };
+    const onEnter = () => {
+      hovered.current = true;
+      if (ringRef.current) ringRef.current.classList.add("cur-ring--hover");
+    };
+    const onLeave = () => {
+      hovered.current = false;
+      if (ringRef.current) ringRef.current.classList.remove("cur-ring--hover");
+    };
+
+    const targets = "a,button,[role='button'],.sk-item,.flt-btn,.pc";
+    const addListeners = () => {
+      document.querySelectorAll(targets).forEach(el => {
+        el.addEventListener("mouseenter", onEnter);
+        el.addEventListener("mouseleave", onLeave);
+      });
+    };
+    addListeners();
+    const observer = new MutationObserver(addListeners);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    window.addEventListener("mousemove", onMove);
+
+    const animate = () => {
+      ring.current.x += (pos.current.x - ring.current.x) * 0.12;
+      ring.current.y += (pos.current.y - ring.current.y) * 0.12;
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate(${ring.current.x}px,${ring.current.y}px)`;
+      }
+      raf.current = requestAnimationFrame(animate);
+    };
+    raf.current = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      observer.disconnect();
+      cancelAnimationFrame(raf.current);
+    };
+  }, []);
+
+  return (
+    <>
+      <div ref={dotRef}  className="cur-dot" />
+      <div ref={ringRef} className="cur-ring" />
+    </>
+  );
+}
+
 // ─── SPOTLIGHT CARD ───────────────────────────────────────────────────────────
 function SC({ children, className = "" }) {
   const ref = useRef(null);
@@ -208,6 +276,31 @@ function Styles() {
       ::-webkit-scrollbar { width: 4px; }
       ::-webkit-scrollbar-track { background: var(--bg); }
       ::-webkit-scrollbar-thumb { background: linear-gradient(var(--v), var(--grn)); border-radius: 2px; }
+
+      /* ── Custom Cursor ── */
+      * { cursor: none !important; }
+      .cur-dot {
+        position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none;
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--v2);
+        margin: -3px 0 0 -3px;
+        transition: width .15s, height .15s, background .15s;
+        will-change: transform;
+      }
+      .cur-ring {
+        position: fixed; top: 0; left: 0; z-index: 9998; pointer-events: none;
+        width: 36px; height: 36px; border-radius: 50%;
+        border: 1.5px solid rgba(59,130,246,.55);
+        margin: -18px 0 0 -18px;
+        transition: width .25s, height .25s, border-color .25s, background .25s;
+        will-change: transform;
+      }
+      .cur-ring--hover {
+        width: 54px; height: 54px;
+        margin: -27px 0 0 -27px;
+        border-color: var(--v);
+        background: rgba(59,130,246,.06);
+      }
 
       /* ── Keyframes ── */
       @keyframes pulse   { 0%,100%{opacity:1}50%{opacity:.35} }
@@ -265,13 +358,34 @@ function Styles() {
       .tx:hover { color:var(--text); }
 
       /* ── Back to top ── */
-      .btt { position:fixed;bottom:32px;left:32px;z-index:400;
-        width:44px;height:44px;border-radius:50%;
-        background:linear-gradient(135deg,var(--v),var(--grn));
-        border:none;color:#fff;font-size:18px;cursor:pointer;
-        display:flex;align-items:center;justify-content:center;
-        box-shadow:0 4px 20px rgba(59,130,246,.5);transition:transform .2s,box-shadow .2s; }
-      .btt:hover { transform:translateY(-3px)scale(1.05);box-shadow:0 8px 28px rgba(59,130,246,.8); }
+      @keyframes btt-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+      .btt {
+        position:fixed; bottom:32px; left:32px; z-index:400;
+        width:48px; height:48px; border-radius:50%;
+        background: rgba(15,23,42,0.45);
+        backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        border: 1.5px solid transparent;
+        background-clip: padding-box;
+        outline: 1.5px solid transparent;
+        box-shadow: 0 0 0 1.5px rgba(59,130,246,0.35), 0 0 18px rgba(59,130,246,0.18), 0 8px 32px rgba(0,0,0,0.45);
+        color:#fff; font-size:17px;
+        display:flex; align-items:center; justify-content:center;
+        animation: btt-float 3s ease-in-out infinite;
+        transition: box-shadow .35s cubic-bezier(.34,1.56,.64,1), transform .35s cubic-bezier(.34,1.56,.64,1);
+        will-change: transform;
+      }
+      .btt::before {
+        content:''; position:absolute; inset:-1.5px; border-radius:50%;
+        background: linear-gradient(135deg, var(--v), var(--grn));
+        z-index:-1; opacity:0.7;
+      }
+      .btt:hover {
+        transform: scale(1.06);
+        box-shadow: 0 0 0 1.5px rgba(59,130,246,0.7), 0 0 28px rgba(59,130,246,0.35), 0 12px 40px rgba(0,0,0,0.5);
+        animation-play-state: paused;
+      }
+      .btt svg { transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+      .btt:hover svg { transform: translateY(-2px); }
 
       /* ── Buttons ── */
       .bp { background:linear-gradient(135deg,var(--v),#0369a1);color:#fff;border:none;
@@ -459,14 +573,14 @@ function Styles() {
       .svc-d { color:var(--tm);font-size:14px;line-height:1.75;margin-bottom:18px; }
 
       /* ── About ── */
-      .ag { display:flex;gap:64px;flex-wrap:wrap; }
-      .at { flex:1 1 360px; }
+      .ag { display:flex;gap:64px;flex-wrap:wrap;align-items:stretch; }
+      .at { flex:1 1 360px;display:flex;flex-direction:column; }
       .at-ey { font-size:11px;font-weight:700;color:var(--vl);letter-spacing:.12em;
         text-transform:uppercase;margin-bottom:10px;font-family:'Courier New',monospace; }
       .at-h { font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:24px;line-height:1.3;
         background:linear-gradient(135deg,var(--text),var(--tm));
         -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-      .at-blocks { display:flex;flex-direction:column;gap:14px;margin-bottom:28px; }
+      .at-blocks { display:flex;flex-direction:column;gap:14px;margin-bottom:28px;flex:1; }
       .at-block { border-radius:14px;padding:18px 20px;border:1px solid;transition:var(--ease); }
       .at-block-v { background:rgba(124,58,237,.06);border-color:rgba(124,58,237,.18); }
       .at-block-c { background:rgba(6,182,212,.05);border-color:rgba(6,182,212,.15); }
@@ -484,6 +598,16 @@ function Styles() {
       .at-block p { color:var(--tm);line-height:1.85;font-size:14px;margin:0; }
       .at-block strong { color:var(--text); }
       .at-act { display:flex;gap:12px;flex-wrap:wrap; }
+      .at-facts { display:flex;flex-direction:column;gap:8px;margin-top:auto;margin-bottom:24px; }
+      .at-fact { display:flex;align-items:center;gap:12px;
+        padding:11px 14px;border-radius:10px;
+        background:rgba(11,18,33,.5);border:1px solid rgba(255,255,255,.06);
+        transition:var(--ease); }
+      .at-fact:hover { border-color:rgba(124,58,237,.25);background:rgba(124,58,237,.05); }
+      .at-fact-dot { width:7px;height:7px;border-radius:50%;flex-shrink:0; }
+      .at-fact-label { font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+        font-family:'Courier New',monospace;flex-shrink:0;min-width:90px; }
+      .at-fact-val { font-size:13px;color:var(--tm);margin-left:auto;text-align:right; }
 
       .sp { flex:1 1 340px;display:flex;flex-direction:column;gap:14px; }
       .sg { background:rgba(11,18,33,.65);border:1px solid var(--bdr);
@@ -551,25 +675,45 @@ function Styles() {
       /* ── Contact ── */
       .cg2 { display:flex;gap:52px;flex-wrap:wrap; }
       .ci { flex:1 1 260px; }
-      .ci h3 { font-size:22px;font-weight:800;margin-bottom:28px;
+      .ci-head { margin-bottom:24px; }
+      .ci-head h3 { font-size:24px;font-weight:800;margin-bottom:6px;
         background:linear-gradient(135deg,var(--text),var(--tm));
         -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-      .citem { margin-bottom:22px; }
-      .clbl { display:block;font-size:11px;color:var(--vl);font-weight:700;margin-bottom:5px;
-        text-transform:uppercase;letter-spacing:.1em;font-family:'Courier New',monospace; }
-      .cval { color:var(--text);font-size:14px; }
-      a.cval:hover { color:var(--vl); }
-      .cgrn { color:var(--grn); }
-      .socrow { display:flex;gap:12px;margin-top:32px; }
-      .socb { width:52px;height:52px;border-radius:14px;
+      .ci-head p { font-size:13px;color:var(--td);line-height:1.6; }
+      .ci-cards { display:flex;flex-direction:column;gap:10px;margin-bottom:22px; }
+      .ci-card { display:flex;align-items:center;gap:14px;
+        background:rgba(11,18,33,.6);border:1px solid rgba(255,255,255,.07);
+        border-radius:12px;padding:13px 16px;transition:var(--ease); }
+      .ci-card:hover { border-color:rgba(124,58,237,.3);background:rgba(124,58,237,.05);transform:translateX(4px); }
+      .ci-ico { width:38px;height:38px;border-radius:10px;flex-shrink:0;
+        display:flex;align-items:center;justify-content:center; }
+      .ci-ico svg { width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
+      .ci-ico-v { background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.25);color:var(--vl); }
+      .ci-ico-c { background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.22);color:var(--c2); }
+      .ci-ico-g { background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.22);color:var(--grn); }
+      .ci-info { display:flex;flex-direction:column;gap:2px; }
+      .ci-lbl { font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+        font-family:'Courier New',monospace; }
+      .ci-lbl-v { color:var(--vl); }
+      .ci-lbl-c { color:var(--c2); }
+      .ci-lbl-g { color:var(--grn); }
+      .ci-val { font-size:13px;color:var(--text); }
+      a.ci-val:hover { color:var(--vl); }
+      .socrow { display:flex;gap:10px;margin-bottom:0; }
+      .socb { flex:1;height:48px;border-radius:12px;
         background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.2);
-        color:var(--vl);display:flex;align-items:center;justify-content:center;
-        transition:var(--ease);position:relative;overflow:hidden; }
-      .socb svg { width:22px;height:22px;fill:currentColor;transition:transform .2s; }
-      .socb:hover { transform:translateY(-4px);box-shadow:0 10px 28px rgba(124,58,237,.3); }
-      .socb.soc-gh:hover { background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff; }
-      .socb.soc-li:hover { background:rgba(10,102,194,.25);border-color:rgba(10,102,194,.6);color:#60a5fa; }
-      .socb:hover svg { transform:scale(1.15); }
+        color:var(--vl);display:flex;align-items:center;justify-content:center;gap:8px;
+        transition:var(--ease);font-size:13px;font-weight:600; }
+      .socb svg { width:18px;height:18px;fill:currentColor;flex-shrink:0;transition:transform .2s; }
+      .socb:hover { transform:translateY(-3px); }
+      .socb.soc-gh:hover { background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.4); }
+      .socb.soc-li:hover { background:rgba(10,102,194,.2);border-color:rgba(10,102,194,.5);color:#60a5fa;box-shadow:0 8px 24px rgba(10,102,194,.25); }
+      .socb:hover svg { transform:scale(1.12); }
+      .socrow-wrap { display:flex;flex-direction:column;gap:10px;margin-bottom:4px; }
+      .reply-badge { display:inline-flex;align-items:center;gap:6px;
+        background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);
+        border-radius:50px;padding:5px 12px;font-size:11px;color:var(--grn);font-weight:600; }
+      .reply-dot { width:6px;height:6px;border-radius:50%;background:var(--grn);animation:pulse 2s infinite; }
       .cf { flex:2 1 360px;display:flex;flex-direction:column;gap:14px; }
       .frow { display:flex;gap:14px;flex-wrap:wrap; }
       .frow .fi { flex:1 1 180px; }
@@ -632,6 +776,40 @@ function Styles() {
         .sv { font-size:32px; }
       }
     `}</style>
+  );
+}
+
+// ─── BACK TO TOP ──────────────────────────────────────────────────────────────
+function BttButton() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const onMove = (e) => {
+      const r = el.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top  + r.height / 2;
+      const dx = e.clientX - cx;
+      const dy = e.clientY - cy;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 80) {
+        const pull = (1 - dist / 80) * 10;
+        el.style.transform = `translate(${(dx / dist) * pull}px, ${(dy / dist) * pull}px) scale(1.06)`;
+      } else {
+        el.style.transform = "";
+      }
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  return (
+    <button ref={ref} className="btt" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Back to top">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M8 13V3M3 7l5-5 5 5"/>
+      </svg>
+    </button>
   );
 }
 
@@ -770,7 +948,8 @@ const SKILL_LOGOS = {
   "VS Code": { src: `${DI}/vscode/vscode-original.svg` },
   "Postman": { src: `${DI}/postman/postman-original.svg` },
   "FastAPI": { src: `${DI}/fastapi/fastapi-original.svg` },
-  "Next.js": { src: `${DI}/nextjs/nextjs-original.svg`, invert: true },
+  "Next.js": { src: `${DI}/nextjs/nextjs-plain.svg`, invert: true },
+  "Node.js": { src: `${DI}/nodejs/nodejs-original.svg` },
   "TypeScript": { src: `${DI}/typescript/typescript-original.svg` },
   "Tailwind CSS": { src: `${DI}/tailwindcss/tailwindcss-original.svg` },
   "REST APIs": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><circle cx="5" cy="12" r="2.5" /><circle cx="19" cy="6" r="2.5" /><circle cx="19" cy="18" r="2.5" /><path d="M7.5 12h5M16.5 6l-7 4.5M16.5 18l-7-4.5" /></svg> },
@@ -790,6 +969,25 @@ const SKILL_LOGOS = {
   "LLMs": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><rect x="3" y="8" width="18" height="10" rx="2" /><circle cx="8" cy="13" r="1.2" fill="currentColor" stroke="none" /><circle cx="12" cy="13" r="1.2" fill="currentColor" stroke="none" /><circle cx="16" cy="13" r="1.2" fill="currentColor" stroke="none" /><path d="M8 8V5.5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1V8" /></svg> },
   "Agentic Design": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><circle cx="12" cy="3" r="1.5" /><circle cx="21" cy="12" r="1.5" /><circle cx="12" cy="21" r="1.5" /><circle cx="3" cy="12" r="1.5" /><path d="M12 6v3M18 12h-3M12 18v-3M6 12h3" /></svg> },
   "Automation": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M12 2a10 10 0 0 1 7.39 16.74" /><path d="M12 22a10 10 0 0 1-7.39-16.74" /><path d="M12 8v4l3 3" /></svg> },
+  "Auth0": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l8 4v6c0 4.5-3.5 8-8 10C7.5 20 4 16.5 4 12V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg> },
+  "JWT": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 12h2M11 12h2M15 12h2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg> },
+  "OAuth": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l8 4v6c0 4.5-3.5 8-8 10C7.5 20 4 16.5 4 12V6l8-4z"/><circle cx="12" cy="12" r="2.5"/><path d="M12 9.5V7M12 14.5V17M14.5 12H17M9.5 12H7"/></svg> },
+  "RAG": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="8" height="5" rx="1"/><rect x="3" y="10" width="8" height="5" rx="1"/><rect x="3" y="17" width="8" height="4" rx="1"/><path d="M14 7h3M14 12h4M14 17h2"/><circle cx="19" cy="17" r="2.5"/><path d="M20.8 18.8l1.7 1.7"/></svg> },
+  "Embeddings": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="5" cy="5" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="5" r="1.5" fill="currentColor" stroke="none"/><circle cx="19" cy="5" r="1.5" fill="currentColor" stroke="none"/><circle cx="5" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none"/><circle cx="19" cy="19" r="1.5" fill="currentColor" stroke="none"/><path d="M5 6.5v4M12 6.5v4M5 13.5v4"/></svg> },
+  "MCP": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="9" width="5" height="6" rx="1"/><rect x="17" y="9" width="5" height="6" rx="1"/><rect x="9" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M7 12h2M15 12h2M12 9V7M12 15v2"/></svg> },
+  "AI Agent Workflows": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="5" height="4" rx="1"/><rect x="9.5" y="10" width="5" height="4" rx="1"/><rect x="17" y="4" width="5" height="4" rx="1"/><rect x="17" y="16" width="5" height="4" rx="1"/><path d="M7 6h2.5M14.5 12H17M19.5 8v8M9.5 12H7a1 1 0 0 1-1-1V7"/></svg> },
+  "Fine-tuning Basics": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="var(--bg)"/><circle cx="16" cy="12" r="2" fill="var(--bg)"/><circle cx="10" cy="18" r="2" fill="var(--bg)"/></svg> },
+  "Prompt Evaluation": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h6"/><path d="M13 16l2 2 4-4"/></svg> },
+  "Vercel": { src: `${DI}/vercel/vercel-original.svg`, invert: true },
+  "GitHub Actions": { src: `${DI}/githubactions/githubactions-original.svg` },
+  "Prisma": { src: `${DI}/prisma/prisma-original.svg`, invert: true },
+  "DB Indexing": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v4c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 10v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4"/><path d="M16 17.5l2 2 3-3"/></svg> },
+  "Query Optimization": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> },
+  "OpenAPI": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/><path d="M15.5 8.5A5 5 0 0 1 17 12a5 5 0 0 1-1.5 3.5"/><path d="M8.5 8.5A5 5 0 0 0 7 12a5 5 0 0 0 1.5 3.5"/></svg> },
+  "Hugging Face": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="11" r="7"/><path d="M9 11c0-1 .5-2 1.5-2s1.5 1 1.5 2-.5 2-1.5 2"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/><path d="M8 17.5C9.2 19 10.5 20 12 20s2.8-1 4-2.5"/></svg> },
+  "CrewAI": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><circle cx="12" cy="16" r="3"/><path d="M10.5 10.5l1.5 3M13.5 10.5l-1.5 3M8 11v1.5M16 11v1.5"/></svg> },
+  "Ollama": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="6" width="18" height="13" rx="3"/><circle cx="8.5" cy="12.5" r="1.5"/><circle cx="15.5" cy="12.5" r="1.5"/><path d="M9 5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/></svg> },
+  "AutoGen": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.5 8.5 22 9.5 17 14.5 18.5 21 12 17.5 5.5 21 7 14.5 2 9.5 8.5 8.5"/></svg> },
   "Intelligent Workflows": { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><rect x="2" y="4" width="5" height="4" rx="1" /><rect x="9.5" y="4" width="5" height="4" rx="1" /><rect x="17" y="4" width="5" height="4" rx="1" /><rect x="5.5" y="14" width="5" height="4" rx="1" /><rect x="13.5" y="14" width="5" height="4" rx="1" /><path d="M4.5 8v2.5h15V8M12 11.5V14M8 11.5v1a1 1 0 0 0 1 1h1M16 11.5v1a1 1 0 0 1-1 1h-1" /></svg> },
 };
 
@@ -961,6 +1159,7 @@ export default function Portfolio() {
   return (
     <div className="pf">
       <Styles />
+      <Cursor />
 
       {/* Background */}
       <div className="aurora">
@@ -973,7 +1172,7 @@ export default function Portfolio() {
       {/* Fixed UI */}
       <div className="spb" style={{ width: `${scrollProg}%` }} />
       {toast && <Toast message={toast} onClose={() => setToast(null)} />}
-      {btt && <button className="btt" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Back to top">↑</button>}
+      {btt && <BttButton />}
 
       {/* ── NAV ── */}
       <nav className="nav pc">
@@ -1087,19 +1286,41 @@ export default function Portfolio() {
                       <span className="at-block-dot at-block-dot-v" />
                       <span className="at-block-label at-block-label-v">Python Full Stack</span>
                     </div>
-                    <p>I joined <strong>Digital Edify Technologies</strong> in November 2024 as a full-time employee and have rapidly grown my expertise. I've built <strong>3+ production-grade applications</strong> using <strong>Python, Django, and React/Next.js</strong> — designing REST APIs, optimizing databases, and building scalable systems. Key projects include the <strong>Nagarjuna Steels CRM</strong>, <strong>HRMS system</strong>, and enterprise solutions serving real clients with real data at scale.</p>
+                    <p>Joined <strong>Digital Edify Technologies</strong> in November 2024. Since then, built <strong>3+ production-grade applications</strong> using <strong>Python, Django, and React/Next.js</strong> — REST API design, database optimization, and scalable architecture. Key deliveries: <strong>Nagarjuna Steels CRM</strong>, <strong>HRMS platform</strong>, and enterprise systems serving real clients at scale.</p>
                   </div>
                   <div className="at-block at-block-c">
                     <div className="at-block-title">
                       <span className="at-block-dot at-block-dot-c" />
                       <span className="at-block-label at-block-label-c">Agentic AI Developer</span>
                     </div>
-                    <p>I architect intelligent automation systems using <strong>LangChain, OpenAI APIs, and multi-agent pipelines</strong>. I've built systems that autonomously monitor CRM workflows, trigger Slack notifications, and generate AI insights  all running 24/7 with <strong>zero human intervention</strong>. The backend doesn't just serve data  it responds, decides, and acts using LLMs to make intelligent decisions.</p>
+                    <p>Building intelligent automation using <strong>LangChain, OpenAI APIs, and multi-agent pipelines</strong>. Systems that autonomously monitor CRM workflows, trigger Slack alerts, and generate AI insights — <strong>24/7, zero human intervention</strong>. The backend doesn't just serve data — it responds, decides, and acts.</p>
+                  </div>
+                </div>
+                <div className="at-facts">
+                  <div className="at-fact">
+                    <span className="at-fact-dot" style={{background:"var(--grn)",boxShadow:"0 0 6px rgba(52,211,153,.6)"}} />
+                    <span className="at-fact-label" style={{color:"var(--grn)"}}>Company</span>
+                    <span className="at-fact-val">Digital Edify Technologies</span>
+                  </div>
+                  <div className="at-fact">
+                    <span className="at-fact-dot" style={{background:"var(--vl)",boxShadow:"0 0 6px rgba(167,139,250,.6)"}} />
+                    <span className="at-fact-label" style={{color:"var(--vl)"}}>Location</span>
+                    <span className="at-fact-val">Hyderabad, India — IST</span>
+                  </div>
+                  <div className="at-fact">
+                    <span className="at-fact-dot" style={{background:"var(--c2)",boxShadow:"0 0 6px rgba(34,211,238,.6)"}} />
+                    <span className="at-fact-label" style={{color:"var(--c2)"}}>Open To</span>
+                    <span className="at-fact-val">Full-time & Freelance</span>
+                  </div>
+                  <div className="at-fact">
+                    <span className="at-fact-dot" style={{background:"#f59e0b",boxShadow:"0 0 6px rgba(245,158,11,.6)"}} />
+                    <span className="at-fact-label" style={{color:"#f59e0b"}}>Education</span>
+                    <span className="at-fact-val">B.Tech — 2023</span>
                   </div>
                 </div>
                 <div className="at-act">
                   <button className="bp" onClick={() => go("contact")}>Let's Work Together →</button>
-                  <button className="bo" disabled title="Resume coming soon" style={{ opacity: 0.5, cursor: "not-allowed" }}>Download Resume</button>
+                  <a href="/Anirudh_Vellanki_Resume.pdf" download="Anirudh_Vellanki_Resume.pdf" className="bo" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>↓ Download Resume</a>
                 </div>
               </div>
               <div className="sp">
@@ -1124,7 +1345,7 @@ export default function Portfolio() {
           <div className="cnt">
             <SectionHeader num="04 / Projects" title="Featured Work" sub="Things I've built — Python, Django, and agentic AI in practice" revRef={secRef4} revOn={sec4} />
             <div className="fbar">
-              {[{ id: "all", label: "All Projects" }, { id: "agentic", label: "Agentic" }, { id: "enterprise", label: "Enterprise" }].map(f => (
+              {[{ id: "all", label: "All Projects" }, { id: "agentic", label: "Agentic" }, { id: "enterprise", label: "Enterprise" }, { id: "fullstack", label: "Full Stack" }].map(f => (
                 <button key={f.id} className={`fb${filter === f.id ? " on" : ""}`} onClick={() => setFilter(f.id)}>{f.label}</button>
               ))}
             </div>
@@ -1140,25 +1361,49 @@ export default function Portfolio() {
             <SectionHeader num="05 / Contact" title="Get In Touch" sub="Open to work — projects, roles, or just a conversation about agentic AI" revRef={secRef5} revOn={sec5} />
             <div className="cg2">
               <div className="ci">
-                <h3>Let's Connect</h3>
-                <div className="citem">
-                  <span className="clbl">Email</span>
-                  <a href={`mailto:${DATA.email}`} className="cval">{DATA.email}</a>
+                <div className="ci-head">
+                  <h3>Let's Connect</h3>
+                  <p>Have a project in mind or want to talk about agentic AI? I'd love to hear from you.</p>
                 </div>
-                <div className="citem">
-                  <span className="clbl">Location</span>
-                  <span className="cval">{DATA.location}</span>
+                <div className="ci-cards">
+                  <div className="ci-card">
+                    <div className="ci-ico ci-ico-v">
+                      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+                    </div>
+                    <div className="ci-info">
+                      <span className="ci-lbl ci-lbl-v">Email</span>
+                      <a href={`mailto:${DATA.email}`} className="ci-val">{DATA.email}</a>
+                    </div>
+                  </div>
+                  <div className="ci-card">
+                    <div className="ci-ico ci-ico-c">
+                      <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    </div>
+                    <div className="ci-info">
+                      <span className="ci-lbl ci-lbl-c">Location</span>
+                      <span className="ci-val">{DATA.location} — IST (UTC+5:30)</span>
+                    </div>
+                  </div>
+                  <div className="ci-card">
+                    <div className="ci-ico ci-ico-g">
+                      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <div className="ci-info">
+                      <span className="ci-lbl ci-lbl-g">Availability</span>
+                      <span className="ci-val">Open to full-time & freelance</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="citem">
-                  <span className="clbl">Status</span>
-                  <span className="cval cgrn">● Open to opportunities</span>
-                </div>
-                <div className="socrow">
-                  {DATA.social.map(s => (
-                    <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className={`socb soc-${s.icon}`} aria-label={s.label}>
-                      {SocialIcons[s.icon]}
-                    </a>
-                  ))}
+                <div className="socrow-wrap">
+                  <div className="socrow">
+                    {DATA.social.map(s => (
+                      <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className={`socb soc-${s.icon}`} aria-label={s.label}>
+                        {SocialIcons[s.icon]}
+                        <span>{s.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                  <span className="reply-badge"><span className="reply-dot" /> Usually replies within 24h</span>
                 </div>
                 <button
                   className="cal-btn"
